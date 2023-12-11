@@ -1,0 +1,29 @@
+:host {
+  .container {
+    width: 430px;
+    background-color: black;
+    height: 500px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    padding: 48px 24px;
+  }
+
+  .today-section {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .today {
+    font-size: 20px;
+  }
+
+  .today-date {
+    font-size: 14px;
+  }
+}

@@ -1,1 +1,8 @@
-<p>todo-list works!</p>
+<div class="container">
+  <div class="today-section">
+    <p class="today">Today</p>
+    <p class="today-date">
+      {{ today | date : "MMMM dd, yyyy" }}
+    </p>
+  </div>
+</div>
