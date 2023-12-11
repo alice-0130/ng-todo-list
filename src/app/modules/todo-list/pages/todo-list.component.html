@@ -9,6 +9,7 @@
   <div class="items-section">
     <todo-item
       *ngFor="let item of items"
+      [id]="item.id"
       [checked]="item.checked"
       [description]="item.description"
     ></todo-item>

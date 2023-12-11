@@ -11,7 +11,6 @@ export class TodoService {
   constructor() {
     // get items from localStorage
     const localStorageItems = window.localStorage.getItem('items');
-    console.log('실행됨1');
     if (localStorageItems) {
       this.todoListItemsSource.next(JSON.parse(localStorageItems));
     }

@@ -1,6 +1,16 @@
-<div [ngClass]="checked ? 'complete' : 'incomplete'" class="container">
+<div
+  #item
+  [id]="id"
+  [ngClass]="checked ? 'complete' : 'incomplete'"
+  class="container"
+>
   <div class="left-side">
-    <button class="check-button" [ngSwitch]="checked" type="button">
+    <button
+      class="check-button"
+      type="button"
+      [ngSwitch]="checked"
+      (click)="changeCheck(item)"
+    >
       <img
         *ngSwitchCase="false"
         src="/assets/images/checkbox-blank-circle.png"
