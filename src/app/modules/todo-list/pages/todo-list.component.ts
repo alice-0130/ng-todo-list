@@ -13,8 +13,6 @@ export class TodoListPage implements OnInit {
   items: TodoListItem[] = [];
 
   constructor(private todoService: TodoService) {
-    console.log('todo-list component constructor execute');
-
     this.today = new Date();
     this.todoService.todoItems$.subscribe((items) => (this.items = items));
   }

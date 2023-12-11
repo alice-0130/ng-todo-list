@@ -28,17 +28,34 @@ export class TodoService {
     ]);
   }
 
-  update(id: number, description: string) {
+  updateChecked(id: number, checked: boolean) {
+    const currentItems = this.todoListItemsSource.getValue();
+    const itemUpdate = currentItems.find((item) => item.id === id);
+    if (itemUpdate) {
+      itemUpdate.checked = checked;
+    }
+    this.saveItemsToLocalStorage();
+  }
+
+  updateDescription(id: number, description: string) {
     const currentItems = this.todoListItemsSource.getValue();
     const itemUpdate = currentItems.find((item) => item.id === id);
     if (itemUpdate) {
       itemUpdate.description = description;
     }
+    this.saveItemsToLocalStorage();
   }
 
   delete(id: number) {
     const currentItems = this.todoListItemsSource.getValue();
     const itemsWithoutDeleted = currentItems.filter((d) => d.id !== id);
     this.todoListItemsSource.next(itemsWithoutDeleted);
+  }
+
+  saveItemsToLocalStorage() {
+    window.localStorage.setItem(
+      'items',
+      JSON.stringify(this.todoListItemsSource.getValue())
+    );
   }
 }

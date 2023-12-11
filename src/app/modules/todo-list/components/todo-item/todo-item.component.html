@@ -9,7 +9,7 @@
       class="check-button"
       type="button"
       [ngSwitch]="checked"
-      (click)="changeCheck(item)"
+      (click)="changeChecked(item.id)"
     >
       <img
         *ngSwitchCase="false"

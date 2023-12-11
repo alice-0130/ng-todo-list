@@ -11,8 +11,8 @@ export class TodoItemComponent implements OnInit {
   @Input() checked!: boolean;
   @Input() description!: string;
 
-  changeCheck(buttonElem: Element) {
-    console.log(buttonElem);
+  changeChecked(id: string) {
+    this.todoService.updateChecked(Number(id), !this.checked);
   }
 
   constructor(private todoService: TodoService) {}
