@@ -8,9 +8,6 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TodoItemComponent implements OnInit {
   @Input() checked!: boolean;
   @Input() description!: string;
-  @Input() time!: string;
-
-  // constructor() {}
 
   ngOnInit(): void {}
 }
