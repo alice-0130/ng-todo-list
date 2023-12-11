@@ -5,6 +5,7 @@
       {{ today | date : "MMMM dd, yyyy" }}
     </p>
   </div>
+  <create-task></create-task>
   <div class="items-section">
     <todo-item
       *ngFor="let item of items"
@@ -13,7 +14,4 @@
       [time]="item.time"
     ></todo-item>
   </div>
-  <button class="add-button" type="button">
-    <img src="/assets/images/add-button.png" alt="add task" />
-  </button>
 </div>

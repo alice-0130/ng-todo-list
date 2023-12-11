@@ -1,0 +1,21 @@
+:host {
+  color: white;
+
+  .container {
+    margin-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+      flex-basis: 85%;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #7a7777;
+      outline: none;
+    }
+
+    button {
+      display: contents;
+    }
+  }
+}

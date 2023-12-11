@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MOCK_TODO_LIST_ITEMS } from '../todo-list-items.mock';
+import { TodoListItem } from '../types/todo-list-item.type';
 
 @Component({
   selector: 'todo-list-page',
@@ -8,7 +8,7 @@ import { MOCK_TODO_LIST_ITEMS } from '../todo-list-items.mock';
 })
 export class TodoListPage implements OnInit {
   today: Date;
-  items = MOCK_TODO_LIST_ITEMS;
+  items: TodoListItem[] = [];
 
   constructor() {
     this.today = new Date();
