@@ -15,6 +15,10 @@ export class TodoItemComponent implements OnInit {
     this.todoService.updateChecked(Number(id), !this.checked);
   }
 
+  deleteTask(id: string) {
+    this.todoService.delete(Number(id));
+  }
+
   constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {}

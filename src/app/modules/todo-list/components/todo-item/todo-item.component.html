@@ -24,4 +24,7 @@
     </button>
     <input class="description" [value]="description" />
   </div>
+  <button type="button" (click)="deleteTask(item.id)">
+    <img src="/assets/images/trash.png" alt="delete task" />
+  </button>
 </div>

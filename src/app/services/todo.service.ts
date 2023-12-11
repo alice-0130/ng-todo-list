@@ -12,7 +12,9 @@ export class TodoService {
     // get items from localStorage
     const localStorageItems = window.localStorage.getItem('items');
     if (localStorageItems) {
-      this.todoListItemsSource.next(JSON.parse(localStorageItems));
+      const localStorageToArray: TodoListItem[] = JSON.parse(localStorageItems);
+      this.id = localStorageToArray[localStorageToArray.length - 1].id + 1;
+      this.todoListItemsSource.next(localStorageToArray);
     }
   }
 
@@ -21,6 +23,7 @@ export class TodoService {
 
   // CRUD
   add(description: string) {
+    console.log(this.id);
     const currentItems = this.todoListItemsSource.getValue();
     this.todoListItemsSource.next([
       ...currentItems,
@@ -51,6 +54,7 @@ export class TodoService {
     const currentItems = this.todoListItemsSource.getValue();
     const itemsWithoutDeleted = currentItems.filter((d) => d.id !== id);
     this.todoListItemsSource.next(itemsWithoutDeleted);
+    this.saveItemsToLocalStorage();
   }
 
   saveItemsToLocalStorage() {
