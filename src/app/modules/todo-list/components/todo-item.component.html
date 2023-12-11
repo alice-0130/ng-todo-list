@@ -1,5 +1,18 @@
-<div>
-  <p>checked: {{ checked }}</p>
-  <p>description: {{ description }}</p>
-  <p>time: {{ time }}</p>
+<div [ngClass]="checked ? 'complete' : 'incomplete'" class="container">
+  <div class="left-side">
+    <button class="check-button" [ngSwitch]="checked" type="button">
+      <img
+        *ngSwitchCase="false"
+        src="/assets/images/checkbox-blank-circle.png"
+        alt="미체크"
+      />
+      <img
+        *ngSwitchCase="true"
+        src="/assets/images/checkbox-circle.png"
+        alt="체크"
+      />
+    </button>
+    <input class="description" [value]="description" />
+  </div>
+  <span class="time">{{ time }}</span>
 </div>

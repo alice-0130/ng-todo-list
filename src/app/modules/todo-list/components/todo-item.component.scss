@@ -1,3 +1,40 @@
 :host {
-  color: white;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 13px;
+    border-radius: 8px;
+    background-color: #201f1f;
+
+    .left-side {
+      display: flex;
+      align-items: center;
+
+      .check-button {
+        display: contents;
+      }
+
+      .description {
+        font-size: 18px;
+        margin-left: 8px;
+      }
+    }
+
+    .time {
+      font-size: 12px;
+    }
+  }
+
+  .complete {
+    color: #7a7777;
+
+    .description {
+      text-decoration: line-through;
+    }
+  }
+
+  .incomplete {
+    color: white;
+  }
 }
