@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-todo-list',
+  selector: 'todo-list-page',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss'],
 })
-export class TodoListComponent implements OnInit {
+export class TodoListPage implements OnInit {
   today: Date;
+  checked = false;
+  description = '산책하기';
+  time = '11:00 am';
 
   constructor() {
     this.today = new Date();

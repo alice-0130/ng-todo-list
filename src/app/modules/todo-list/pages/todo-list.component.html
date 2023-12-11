@@ -5,4 +5,11 @@
       {{ today | date : "MMMM dd, yyyy" }}
     </p>
   </div>
+  <div class="item-section">
+    <todo-item
+      [checked]="false"
+      [description]="description"
+      [time]="time"
+    ></todo-item>
+  </div>
 </div>

@@ -2,18 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { TodoListComponent } from './modules/todo-list/pages/todo-list.component';
 import { RouterModule } from '@angular/router';
+import { TodoListModule } from './modules/todo-list/todo-list.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent, TodoListComponent],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot([
-      { path: 'todo-list', component: TodoListComponent },
-      { path: '', redirectTo: '/todo-list', pathMatch: 'full' },
-    ]),
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
