@@ -7,9 +7,10 @@
   </div>
   <div class="items-section">
     <todo-item
-      [checked]="true"
-      [description]="description"
-      [time]="time"
+      *ngFor="let item of items"
+      [checked]="item.checked"
+      [description]="item.description"
+      [time]="item.time"
     ></todo-item>
   </div>
 </div>

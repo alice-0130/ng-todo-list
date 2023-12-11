@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MOCK_TODO_LIST_ITEMS } from '../todo-list-items.mock';
 
 @Component({
   selector: 'todo-list-page',
@@ -7,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoListPage implements OnInit {
   today: Date;
-  checked = false;
-  description = '산책하기';
-  time = '11:00 am';
+  items = MOCK_TODO_LIST_ITEMS;
 
   constructor() {
     this.today = new Date();

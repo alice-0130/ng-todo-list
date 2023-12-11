@@ -2,7 +2,6 @@
   .container {
     width: 430px;
     background-color: black;
-    height: 500px;
     position: fixed;
     left: 50%;
     top: 50%;
@@ -17,13 +16,21 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    .today {
+      font-size: 20px;
+    }
+
+    .today-date {
+      font-size: 14px;
+      color: #7d7878;
+    }
   }
 
-  .today {
-    font-size: 20px;
-  }
-
-  .today-date {
-    font-size: 14px;
+  .items-section {
+    margin-top: 27px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 }
