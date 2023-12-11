@@ -3,13 +3,22 @@ import { BehaviorSubject } from 'rxjs';
 import { TodoListItem } from '../modules/todo-list/types/todo-list-item.type';
 
 @Injectable()
-export class MissionService {
+export class TodoService {
   // 문자열 타입의 옵저버블 소스
   private todoListItemsSource = new BehaviorSubject<TodoListItem[]>([]);
   private id = 1;
 
+  constructor() {
+    // get items from localStorage
+    const localStorageItems = window.localStorage.getItem('items');
+    console.log('실행됨1');
+    if (localStorageItems) {
+      this.todoListItemsSource.next(JSON.parse(localStorageItems));
+    }
+  }
+
   // 문자열 옵저버블 스트림
-  missionAnnounced$ = this.todoListItemsSource.asObservable();
+  todoItems$ = this.todoListItemsSource.asObservable();
 
   // CRUD
   add(description: string) {
