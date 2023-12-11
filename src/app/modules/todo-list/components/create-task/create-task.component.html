@@ -1,6 +1,6 @@
 <div class="container">
-  <input placeholder="오늘 할 일을 추가해 보세요." />
-  <button>
+  <input placeholder="오늘 할 일을 추가해 보세요." #input />
+  <button type="button" (click)="addTask(input)">
     <img src="/assets/images/add-button.png" alt="add task" />
   </button>
 </div>

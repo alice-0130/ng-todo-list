@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'create-task',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-task.component.scss'],
 })
 export class CreateTaskComponent implements OnInit {
-  constructor() {}
+  addTask(inputElem: HTMLInputElement) {
+    this.todoService.add(inputElem.value);
+    inputElem.value = '';
+  }
+
+  constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {}
 }

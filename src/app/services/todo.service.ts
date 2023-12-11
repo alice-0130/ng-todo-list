@@ -26,6 +26,7 @@ export class TodoService {
       ...currentItems,
       { id: this.id++, checked: false, description },
     ]);
+    this.saveItemsToLocalStorage();
   }
 
   updateChecked(id: number, checked: boolean) {
