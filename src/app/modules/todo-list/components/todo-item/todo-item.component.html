@@ -22,7 +22,12 @@
         alt="체크"
       />
     </button>
-    <input class="description" [value]="description" />
+    <input
+      #input
+      class="description"
+      [value]="description"
+      (input)="changeDescription(item.id, input.value)"
+    />
   </div>
   <button type="button" (click)="deleteTask(item.id)">
     <img src="/assets/images/trash.png" alt="delete task" />

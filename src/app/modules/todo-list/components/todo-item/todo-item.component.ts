@@ -15,6 +15,10 @@ export class TodoItemComponent implements OnInit {
     this.todoService.updateChecked(Number(id), !this.checked);
   }
 
+  changeDescription(id: string, description: string) {
+    this.todoService.updateDescription(Number(id), description);
+  }
+
   deleteTask(id: string) {
     this.todoService.delete(Number(id));
   }
