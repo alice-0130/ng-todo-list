@@ -13,5 +13,8 @@
       [checked]="item.checked"
       [description]="item.description"
     ></todo-item>
+    <div class="empty-section" *ngIf="(items$ | async)?.length === 0">
+      데이터가 비었습니다.
+    </div>
   </div>
 </div>

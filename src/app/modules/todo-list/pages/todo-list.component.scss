@@ -34,6 +34,12 @@
     gap: 8px;
     max-height: 460px;
     overflow-y: auto;
+
+    .empty-section {
+      color: #7a7777;
+      padding: 50px 0;
+      text-align: center;
+    }
   }
 
   .add-button {
