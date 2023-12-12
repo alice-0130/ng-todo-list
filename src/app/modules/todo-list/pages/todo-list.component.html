@@ -8,7 +8,7 @@
   <create-task></create-task>
   <div class="items-section">
     <todo-item
-      *ngFor="let item of items"
+      *ngFor="let item of items$ | async"
       [id]="item.id"
       [checked]="item.checked"
       [description]="item.description"
