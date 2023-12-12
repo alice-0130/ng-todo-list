@@ -8,8 +8,10 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class CreateTaskComponent implements OnInit {
   addTask(inputElem: HTMLInputElement) {
-    this.todoService.add(inputElem.value);
-    inputElem.value = '';
+    if (inputElem.value) {
+      this.todoService.add(inputElem.value);
+      inputElem.value = '';
+    }
   }
 
   constructor(private todoService: TodoService) {}
