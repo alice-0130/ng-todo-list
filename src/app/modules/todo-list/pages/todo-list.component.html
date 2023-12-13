@@ -5,7 +5,7 @@
       {{ today | date : "MMMM dd, yyyy" }}
     </p>
   </div>
-  <create-task></create-task>
+  <create-task [(isEmpty)]="isInputEmpty"></create-task>
   <div class="items-section">
     <todo-item
       *ngFor="let item of items$ | async"
