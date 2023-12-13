@@ -3,4 +3,5 @@
   <button type="button" (click)="addTask(input)">
     <img src="/assets/images/add-button.png" alt="add task" />
   </button>
+  <p class="input-error" *ngIf="isEmpty">빈 값은 입력할 수 없습니다.</p>
 </div>

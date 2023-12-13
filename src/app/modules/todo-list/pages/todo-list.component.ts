@@ -11,8 +11,13 @@ import { Observable } from 'rxjs';
 })
 export class TodoListPage implements OnInit {
   today: Date;
-  // items: TodoListItem[] = [];
   items$: Observable<TodoListItem[]>;
+  isInputEmpty = false;
+  // items: TodoListItem[] = [];
+
+  alertEmptyData(isEmpty: boolean) {
+    this.isInputEmpty = isEmpty;
+  }
 
   constructor(private todoService: TodoService) {
     this.today = new Date();
